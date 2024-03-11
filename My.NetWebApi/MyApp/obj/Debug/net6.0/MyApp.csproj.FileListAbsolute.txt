@@ -31,3 +31,5 @@ C:\Users\m_oyg\Desktop\Backend Projects\My.NetWebApi\MyApp\bin\Debug\net6.0\Micr
 C:\Users\m_oyg\Desktop\Backend Projects\My.NetWebApi\MyApp\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\m_oyg\Desktop\Backend Projects\My.NetWebApi\MyApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\m_oyg\Desktop\Backend Projects\My.NetWebApi\MyApp\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\m_oyg\Desktop\Backend Projects\My.NetWebApi\MyApp\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\m_oyg\Desktop\Backend Projects\My.NetWebApi\MyApp\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

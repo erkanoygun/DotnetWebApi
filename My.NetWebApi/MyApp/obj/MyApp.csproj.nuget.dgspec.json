@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj": {}
+    "c:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj": {
+    "c:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj",
+        "projectUniqueName": "c:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj",
         "projectName": "MyApp",
-        "projectPath": "C:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj",
+        "projectPath": "c:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj",
         "packagesPath": "C:\\Users\\m_oyg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\obj\\",
+        "outputPath": "c:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\m_oyg\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.7.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.25, )"

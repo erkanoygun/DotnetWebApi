@@ -1,3 +1,4 @@
+using AutoMapper;
 using MyApp.Common;
 using MyApp.DBOperation;
 
@@ -6,17 +7,22 @@ namespace MyApp.BookOperations.GetBooks
     public class GetBooksQuery
     {
         private readonly BookStoreDBContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public GetBooksQuery(BookStoreDBContext dbContext)
+        public GetBooksQuery(BookStoreDBContext dbContext,IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
 
 
         public List<BooksViewModel> Handle()
         {
             var bookList = _dbContext.Books.OrderBy(x=> x.Id).ToList<Book>();
-            List<BooksViewModel> vmList = new List<BooksViewModel>();
+            List<BooksViewModel> vmList  = _mapper.Map<List<BooksViewModel>>(bookList);
+
+            /*List<BooksViewModel> vmList = new List<BooksViewModel>();
+
             foreach(var book in bookList)
             {
                 vmList.Add(
@@ -27,7 +33,7 @@ namespace MyApp.BookOperations.GetBooks
                         PageCount = book.PageCount
                     }
                 );
-            }
+            }*/
 
             return vmList;
         }

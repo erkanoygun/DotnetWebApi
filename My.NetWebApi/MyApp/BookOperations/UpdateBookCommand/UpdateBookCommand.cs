@@ -1,3 +1,4 @@
+using AutoMapper;
 using MyApp.DBOperation;
 
 namespace MyApp.BookOperations.UpdateBookCommand

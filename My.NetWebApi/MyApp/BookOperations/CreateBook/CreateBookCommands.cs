@@ -1,3 +1,4 @@
+using AutoMapper;
 using MyApp.DBOperation;
 
 namespace MyApp.BookOperations.CreateBook
@@ -7,10 +8,12 @@ namespace MyApp.BookOperations.CreateBook
         public CreateBookModel Model {get; set;} = null!;
 
         private readonly BookStoreDBContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public CreateBookCommand(BookStoreDBContext dbContext)
+        public CreateBookCommand(BookStoreDBContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
 
         public void Handle()
@@ -19,13 +22,14 @@ namespace MyApp.BookOperations.CreateBook
             if(book is not null)
                 throw new InvalidOperationException("Book is already exist!");
 
-            book = new Book
+            book = _mapper.Map<Book>(Model);
+            /*book = new Book
             {
                 Title = Model.Title,
                 PublisDate = Model.publishDate,
                 PageCount = Model.PageCount,
                 GenereId = Model.genreId
-            };
+            };*/
 
             _dbContext.Books.Add(book);
         }
