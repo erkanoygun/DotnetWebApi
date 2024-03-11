@@ -21,20 +21,6 @@ namespace MyApp.BookOperations.GetBooks
             var bookList = _dbContext.Books.OrderBy(x=> x.Id).ToList<Book>();
             List<BooksViewModel> vmList  = _mapper.Map<List<BooksViewModel>>(bookList);
 
-            /*List<BooksViewModel> vmList = new List<BooksViewModel>();
-
-            foreach(var book in bookList)
-            {
-                vmList.Add(
-                    new BooksViewModel(){
-                        Title = book.Title!,
-                        Genre = ((GenreEnum)book.GenereId).ToString(),
-                        PublisDate = book.PublisDate.Date.ToString("dd/MM/yyy"),
-                        PageCount = book.PageCount
-                    }
-                );
-            }*/
-
             return vmList;
         }
     }

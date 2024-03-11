@@ -11,7 +11,6 @@ namespace MyApp.BookOperations.GetBooksById
     public class GetBookByIdQuery
     {
         public int bookId {get; set;}
-        private BooksViewModelById Model {get; set;} = null!;
         private readonly BookStoreDBContext _dbContext;
         private readonly IMapper _mapper;
 
@@ -30,13 +29,6 @@ namespace MyApp.BookOperations.GetBooksById
             {
                 BooksViewModelById vm = _mapper.Map<BooksViewModelById>(book);
                 return vm;
-                /*return new BooksViewModelById()
-                {
-                    Title = book.Title,
-                    Genre = ((GenreEnum)book.GenereId).ToString(),
-                    PublisDate = book.PublisDate.Date.ToString("dd/MM/yyy"),
-                    PageCount = book.PageCount
-                };*/
             }
             else
             {

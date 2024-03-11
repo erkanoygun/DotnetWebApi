@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj": {}
+    "C:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj": {}
   },
   "projects": {
-    "c:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj": {
+    "C:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj",
+        "projectUniqueName": "C:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj",
         "projectName": "MyApp",
-        "projectPath": "c:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj",
+        "projectPath": "C:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\MyApp.csproj",
         "packagesPath": "C:\\Users\\m_oyg\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\obj\\",
+        "outputPath": "C:\\Users\\m_oyg\\Desktop\\Backend Projects\\My.NetWebApi\\MyApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\m_oyg\\AppData\\Roaming\\NuGet\\NuGet.Config"

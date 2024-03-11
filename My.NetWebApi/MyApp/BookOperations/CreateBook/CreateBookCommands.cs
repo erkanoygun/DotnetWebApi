@@ -23,13 +23,6 @@ namespace MyApp.BookOperations.CreateBook
                 throw new InvalidOperationException("Book is already exist!");
 
             book = _mapper.Map<Book>(Model);
-            /*book = new Book
-            {
-                Title = Model.Title,
-                PublisDate = Model.publishDate,
-                PageCount = Model.PageCount,
-                GenereId = Model.genreId
-            };*/
 
             _dbContext.Books.Add(book);
         }
