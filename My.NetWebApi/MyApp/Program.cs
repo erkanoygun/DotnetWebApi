@@ -1,6 +1,7 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using MyApp.DBOperation;
+using MyApp.MiddleWares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,5 +35,7 @@ using(var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
     DataGenerator.Initialize(services);
 }
+
+app.UseCustomExceptionMiddle();
 
 app.Run();

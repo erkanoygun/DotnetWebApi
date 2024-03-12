@@ -1,6 +1,5 @@
 using AutoMapper;
 using FluentValidation;
-using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.BookOperations.CreateBook;
 using MyApp.BookOperations.DeleteCommand;
@@ -26,7 +25,7 @@ public class BookController : ControllerBase
     [HttpGet]
     public IActionResult GetBooks()
     {
-        GetBooksQuery booksQuery = new GetBooksQuery(_context,_mapper);
+        GetBooksQuery booksQuery = new GetBooksQuery(_context, _mapper);
         var result = booksQuery.Handle();
 
         return Ok(result);
@@ -40,34 +39,20 @@ public class BookController : ControllerBase
         {
             bookId = id
         };
-        try
-        {
-            validator.ValidateAndThrow(bookByIdQuery);
-            var result = bookByIdQuery.Handle();
-            return Ok(result);
-        }
-        catch(Exception e)
-        {
-            return BadRequest(e.Message);
-        }
+        validator.ValidateAndThrow(bookByIdQuery);
+        var result = bookByIdQuery.Handle();
+        return Ok(result);
     }
 
     [HttpPost]
     public IActionResult AddBook([FromBody] CreateBookModel newBook)
     {
         CreateBookCommand command = new CreateBookCommand(_context, _mapper);
-        try
-        {
-            command.Model = newBook;
-            CreateBookCommandValidator validator = new CreateBookCommandValidator();
-            validator.ValidateAndThrow(command);
-            
-            command.Handle();
-        }
-        catch (Exception e)
-        {
-            return BadRequest(e.Message);
-        }
+        command.Model = newBook;
+        CreateBookCommandValidator validator = new CreateBookCommandValidator();
+        validator.ValidateAndThrow(command);
+
+        command.Handle();
 
         _context.SaveChanges();
         return Ok();
@@ -82,17 +67,11 @@ public class BookController : ControllerBase
             bookId = id,
             updateModel = updateBook
         };
-        try
-        {
-            UpdateBookCommandValidator validator = new UpdateBookCommandValidator();
-            validator.ValidateAndThrow(updateBookCommand);
-            updateBookCommand.Handle();
-            return Ok();
-        }
-        catch (Exception e)
-        {
-            return BadRequest(e.Message);
-        }
+
+        UpdateBookCommandValidator validator = new UpdateBookCommandValidator();
+        validator.ValidateAndThrow(updateBookCommand);
+        updateBookCommand.Handle();
+        return Ok();
     }
 
     [HttpDelete("{id}")]
@@ -102,18 +81,11 @@ public class BookController : ControllerBase
         {
             bookId = id
         };
-        
-        try
-        {
-            DeleteBookCommandValidator validator = new DeleteBookCommandValidator();
-            validator.ValidateAndThrow(command);
-            command.Handle();
-            return Ok();
-        }
-        catch (Exception e)
-        {
-            return BadRequest(e.Message);
-        }
+
+        DeleteBookCommandValidator validator = new DeleteBookCommandValidator();
+        validator.ValidateAndThrow(command);
+        command.Handle();
+        return Ok();
     }
 }
 

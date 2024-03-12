@@ -11,5 +11,4 @@ public class Book
     public int PageCount {get; set;}
     public DateTime PublisDate {get; set;}
 
-
 }

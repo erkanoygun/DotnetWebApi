@@ -34,3 +34,4 @@ C:\Users\m_oyg\Desktop\Backend Projects\My.NetWebApi\MyApp\bin\Debug\net6.0\Syst
 C:\Users\m_oyg\Desktop\Backend Projects\My.NetWebApi\MyApp\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\m_oyg\Desktop\Backend Projects\My.NetWebApi\MyApp\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\m_oyg\Desktop\Backend Projects\My.NetWebApi\MyApp\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\m_oyg\Desktop\Backend Projects\My.NetWebApi\MyApp\bin\Debug\net6.0\Newtonsoft.Json.dll
