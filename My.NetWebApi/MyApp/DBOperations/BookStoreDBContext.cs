@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using MyApp.Entities;
 
 namespace MyApp.DBOperation;
 
@@ -8,4 +9,5 @@ public class BookStoreDBContext : DbContext
     {}
 
     public DbSet<Book> Books {get; set;} = null!;
+    public DbSet<Genre> Genres {get; set;} = null!;
 }

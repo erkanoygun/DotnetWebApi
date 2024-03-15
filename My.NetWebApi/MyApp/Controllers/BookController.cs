@@ -47,8 +47,10 @@ public class BookController : ControllerBase
     [HttpPost]
     public IActionResult AddBook([FromBody] CreateBookModel newBook)
     {
-        CreateBookCommand command = new CreateBookCommand(_context, _mapper);
-        command.Model = newBook;
+        CreateBookCommand command = new CreateBookCommand(_context, _mapper)
+        {
+            Model = newBook
+        };
         CreateBookCommandValidator validator = new CreateBookCommandValidator();
         validator.ValidateAndThrow(command);
 

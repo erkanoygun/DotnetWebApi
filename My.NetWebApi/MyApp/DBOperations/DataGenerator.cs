@@ -1,5 +1,5 @@
-using System.Data.Common;
 using Microsoft.EntityFrameworkCore;
+using MyApp.Entities;
 
 namespace MyApp.DBOperation;
 
@@ -9,13 +9,25 @@ public class DataGenerator
     {
         using (var context = new BookStoreDBContext(serviceProvider.GetRequiredService<DbContextOptions<BookStoreDBContext>>()))
         {
-            if (context.Books!.Any())
+            if (context.Books.Any())
                 return;
 
-            context.Books!.AddRange(
+            
+            context.Genres.AddRange(
+                new Genre{
+                    name = "Personal Growth"
+                },
+                new Genre{
+                    name = "Science Finction"
+                },
+                new Genre{
+                    name = "Noval"
+                }
+            );
+            
+            context.Books.AddRange(
                 new Book
                 {
-                    //Id = 1,
                     Title = "Sefiller",
                     GenereId = 1,
                     PageCount = 200,
@@ -23,7 +35,6 @@ public class DataGenerator
                 },
                 new Book
                 {
-                    //Id = 2,
                     Title = "Kürk mantolu madonna",
                     GenereId = 2,
                     PageCount = 350,
@@ -31,7 +42,6 @@ public class DataGenerator
                 },
                 new Book
                 {
-                    //Id = 3,
                     Title = "Anna Karenna",
                     GenereId = 3,
                     PageCount = 621,

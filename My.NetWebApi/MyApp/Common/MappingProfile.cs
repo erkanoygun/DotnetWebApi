@@ -1,5 +1,7 @@
 using AutoMapper;
-using MyApp.BookOperations.GetBooksById;
+using MyApp.Application.GenreOperations.Querys.GetGenreQueryDetail;
+using MyApp.Entities;
+using static MyApp.Application.GenreOperations.Querys.GetGenresQuery;
 
 namespace MyApp.Common
 {
@@ -8,8 +10,10 @@ namespace MyApp.Common
        public MappingProfile()
         {
             CreateMap<CreateBookModel, Book>();
-            CreateMap<Book, BooksViewModelById>().ForMember(dets=>dets.Genre,opt=>opt.MapFrom(src=> ((GenreEnum)src.GenereId).ToString()));
-            CreateMap<Book, BooksViewModel>().ForMember(dets=>dets.Genre,opt=>opt.MapFrom(src=> ((GenreEnum)src.GenereId).ToString()));
+            CreateMap<Book, BooksViewModelById>().ForMember(dets=>dets.Genre,opt=>opt.MapFrom(src=> src.Genre.name));
+            CreateMap<Book, BooksViewModel>().ForMember(dets=>dets.Genre,opt=>opt.MapFrom(src=> src.Genre.name));
+            CreateMap<Genre, GenresViewModel>();
+            CreateMap<Genre, GenreDetailViewModel>();
         }
     }
 }
