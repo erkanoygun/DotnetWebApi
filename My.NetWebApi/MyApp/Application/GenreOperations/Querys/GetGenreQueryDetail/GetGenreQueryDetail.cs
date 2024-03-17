@@ -1,5 +1,6 @@
 using AutoMapper;
 using MyApp.DBOperation;
+using MyApp.DBOperations;
 using MyApp.Entities;
 
 namespace MyApp.Application.GenreOperations.Querys.GetGenreQueryDetail
@@ -7,10 +8,10 @@ namespace MyApp.Application.GenreOperations.Querys.GetGenreQueryDetail
     public class GetGenreQueryDetail
     {
         public int genreId { get; set; }
-        private readonly BookStoreDBContext _dbContext;
+        private readonly IBookStoreDBContext _dbContext;
         private readonly IMapper _mapper;
 
-        public GetGenreQueryDetail(BookStoreDBContext dbContext, IMapper mapper)
+        public GetGenreQueryDetail(IBookStoreDBContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

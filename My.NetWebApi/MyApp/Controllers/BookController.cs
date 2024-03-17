@@ -7,16 +7,17 @@ using MyApp.BookOperations.GetBooks;
 using MyApp.BookOperations.GetBooksById;
 using MyApp.BookOperations.UpdateBookCommand;
 using MyApp.DBOperation;
+using MyApp.DBOperations;
 namespace MyApp.Controllers;
 
 [ApiController]
 [Route("[controller]s")]
 public class BookController : ControllerBase
 {
-    private readonly BookStoreDBContext _context;
+    private readonly IBookStoreDBContext _context;
     private readonly IMapper _mapper;
 
-    public BookController(BookStoreDBContext context, IMapper mapper)
+    public BookController(IBookStoreDBContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;

@@ -1,5 +1,6 @@
 using AutoMapper;
 using MyApp.DBOperation;
+using MyApp.DBOperations;
 
 namespace MyApp.BookOperations.CreateBook
 {
@@ -7,10 +8,10 @@ namespace MyApp.BookOperations.CreateBook
     {
         public CreateBookModel Model {get; set;} = null!;
 
-        private readonly BookStoreDBContext _dbContext;
+        private readonly IBookStoreDBContext _dbContext;
         private readonly IMapper _mapper;
 
-        public CreateBookCommand(BookStoreDBContext dbContext, IMapper mapper)
+        public CreateBookCommand(IBookStoreDBContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

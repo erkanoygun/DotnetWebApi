@@ -2,15 +2,16 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using MyApp.Common;
 using MyApp.DBOperation;
+using MyApp.DBOperations;
 
 namespace MyApp.BookOperations.GetBooks
 {
     public class GetBooksQuery
     {
-        private readonly BookStoreDBContext _dbContext;
+        private readonly IBookStoreDBContext _dbContext;
         private readonly IMapper _mapper;
 
-        public GetBooksQuery(BookStoreDBContext dbContext, IMapper mapper)
+        public GetBooksQuery(IBookStoreDBContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

@@ -1,13 +1,14 @@
 using MyApp.DBOperation;
+using MyApp.DBOperations;
 
 namespace MyApp.Application.GenreOperations.Commands.DeleteGenre
 {
     public class DeleteGenreCommand
     {
         public int genreId { get; set; }
-        private readonly BookStoreDBContext _dbContext;
+        private readonly IBookStoreDBContext _dbContext;
 
-        public DeleteGenreCommand(BookStoreDBContext dbContext)
+        public DeleteGenreCommand(IBookStoreDBContext dbContext)
         {
             _dbContext = dbContext;
         }

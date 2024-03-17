@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +7,7 @@ using MyApp.Application.GenreOperations.Commands.UpdateGenre;
 using MyApp.Application.GenreOperations.Querys;
 using MyApp.Application.GenreOperations.Querys.GetGenreQueryDetail;
 using MyApp.DBOperation;
+using MyApp.DBOperations;
 using static MyApp.Application.GenreOperations.Commands.CreateGenre.CreateGenreCommand;
 using static MyApp.Application.GenreOperations.Commands.UpdateGenre.UpdateGenreCommand;
 
@@ -20,10 +17,10 @@ namespace MyApp.Controllers
     [Route("api/[controller]s")]
     public class GenreController : ControllerBase
     {
-        private readonly BookStoreDBContext _context;
+        private readonly IBookStoreDBContext _context;
         private readonly IMapper _mapper;
 
-        public GenreController(BookStoreDBContext context, IMapper mapper)
+        public GenreController(IBookStoreDBContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

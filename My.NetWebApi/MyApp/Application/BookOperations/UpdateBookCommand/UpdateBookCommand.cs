@@ -1,5 +1,6 @@
 using AutoMapper;
 using MyApp.DBOperation;
+using MyApp.DBOperations;
 
 namespace MyApp.BookOperations.UpdateBookCommand
 {
@@ -7,9 +8,9 @@ namespace MyApp.BookOperations.UpdateBookCommand
     {
         public int bookId {get; set;}
         public UpdateBookModel updateModel {get; set;} = null!;
-        private readonly BookStoreDBContext _dbContext;
+        private readonly IBookStoreDBContext _dbContext;
 
-        public UpdateBookCommand(BookStoreDBContext dbContext)
+        public UpdateBookCommand(IBookStoreDBContext dbContext)
         {
             _dbContext = dbContext;
         }

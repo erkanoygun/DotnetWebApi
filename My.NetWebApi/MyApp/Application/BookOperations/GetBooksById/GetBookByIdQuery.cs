@@ -1,15 +1,16 @@
 using AutoMapper;
 using MyApp.DBOperation;
+using MyApp.DBOperations;
 
 namespace MyApp.BookOperations.GetBooksById
 {
     public class GetBookByIdQuery
     {
         public int bookId {get; set;}
-        private readonly BookStoreDBContext _dbContext;
+        private readonly IBookStoreDBContext _dbContext;
         private readonly IMapper _mapper;
 
-        public GetBookByIdQuery(BookStoreDBContext dbContext,IMapper mapper)
+        public GetBookByIdQuery(IBookStoreDBContext dbContext,IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

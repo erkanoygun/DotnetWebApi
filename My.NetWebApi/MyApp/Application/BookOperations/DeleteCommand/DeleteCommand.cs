@@ -1,13 +1,14 @@
 using MyApp.DBOperation;
+using MyApp.DBOperations;
 
 namespace MyApp.BookOperations.DeleteCommand
 {
     public class DeleteCommand
     {
         public int bookId { get; set; }
-        private readonly BookStoreDBContext _dbContext;
+        private readonly IBookStoreDBContext _dbContext;
 
-        public DeleteCommand(BookStoreDBContext dbContext)
+        public DeleteCommand(IBookStoreDBContext dbContext)
         {
             _dbContext = dbContext;
         }

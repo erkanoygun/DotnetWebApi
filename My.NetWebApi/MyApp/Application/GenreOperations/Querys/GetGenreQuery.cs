@@ -1,14 +1,15 @@
 using AutoMapper;
 using MyApp.DBOperation;
+using MyApp.DBOperations;
 
 namespace MyApp.Application.GenreOperations.Querys
 {
     public class GetGenresQuery
     {
-        private readonly BookStoreDBContext _dbContext;
+        private readonly IBookStoreDBContext _dbContext;
         private readonly IMapper _mapper;
 
-        public GetGenresQuery(BookStoreDBContext dbContext, IMapper mapper)
+        public GetGenresQuery(IBookStoreDBContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

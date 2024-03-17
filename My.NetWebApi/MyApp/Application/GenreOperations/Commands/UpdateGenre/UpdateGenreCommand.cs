@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MyApp.DBOperation;
+using MyApp.DBOperations;
 
 namespace MyApp.Application.GenreOperations.Commands.UpdateGenre
 {
@@ -10,8 +11,8 @@ namespace MyApp.Application.GenreOperations.Commands.UpdateGenre
     {
         public int genreId { get; set; }
         public UpdateGenreModel updateModel { get; set; } = null!;
-        private readonly BookStoreDBContext _dbContext;
-        public UpdateGenreCommand(BookStoreDBContext context)
+        private readonly IBookStoreDBContext _dbContext;
+        public UpdateGenreCommand(IBookStoreDBContext context)
         {
             _dbContext = context;
         }

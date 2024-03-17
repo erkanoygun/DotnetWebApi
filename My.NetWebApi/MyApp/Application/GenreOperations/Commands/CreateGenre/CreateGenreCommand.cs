@@ -1,5 +1,6 @@
 using System;
 using MyApp.DBOperation;
+using MyApp.DBOperations;
 using MyApp.Entities;
 
 namespace MyApp.Application.GenreOperations.Commands.CreateGenre
@@ -7,9 +8,9 @@ namespace MyApp.Application.GenreOperations.Commands.CreateGenre
     public class CreateGenreCommand
     {
         public CreateGenreModel model {get; set;} = null!;
-        private readonly BookStoreDBContext _dbContext;
+        private readonly IBookStoreDBContext _dbContext;
 
-        public CreateGenreCommand(BookStoreDBContext context)
+        public CreateGenreCommand(IBookStoreDBContext context)
         {
             _dbContext = context;
         }
