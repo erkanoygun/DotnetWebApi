@@ -1,15 +1,16 @@
 using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.BookOperations.CreateBook;
 using MyApp.BookOperations.DeleteCommand;
 using MyApp.BookOperations.GetBooks;
 using MyApp.BookOperations.GetBooksById;
 using MyApp.BookOperations.UpdateBookCommand;
-using MyApp.DBOperation;
 using MyApp.DBOperations;
 namespace MyApp.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("[controller]s")]
 public class BookController : ControllerBase

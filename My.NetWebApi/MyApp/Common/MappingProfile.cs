@@ -2,6 +2,7 @@ using AutoMapper;
 using MyApp.Application.GenreOperations.Querys.GetGenreQueryDetail;
 using MyApp.Entities;
 using static MyApp.Application.GenreOperations.Querys.GetGenresQuery;
+using static MyApp.Application.UserOperations.Commands.CreateUserCommand;
 
 namespace MyApp.Common
 {
@@ -14,6 +15,7 @@ namespace MyApp.Common
             CreateMap<Book, BooksViewModel>().ForMember(dets=>dets.Genre,opt=>opt.MapFrom(src=> src.Genre.name));
             CreateMap<Genre, GenresViewModel>();
             CreateMap<Genre, GenreDetailViewModel>();
+            CreateMap<CreateUserModel, User>();
         }
     }
 }

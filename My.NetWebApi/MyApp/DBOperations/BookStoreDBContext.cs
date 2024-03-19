@@ -11,6 +11,7 @@ public class BookStoreDBContext : DbContext, IBookStoreDBContext
 
     public DbSet<Book> Books {get; set;} = null!;
     public DbSet<Genre> Genres {get; set;} = null!;
+    public DbSet<User> Users {get; set;} = null!;
 
     public override int SaveChanges()
     {
